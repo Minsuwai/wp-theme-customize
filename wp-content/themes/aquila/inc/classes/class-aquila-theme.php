@@ -16,6 +16,8 @@ class AQUILA_THEME {
 
 		//load class
 		Assets::get_instance();
+		Menus::get_instance();
+		Meta_Boxes::get_instance();
 
 		$this->setup_hooks();
 
@@ -47,9 +49,25 @@ class AQUILA_THEME {
 		add_theme_support( 'custom-background', [
 			'default-color' => '#fff',
 			'default-image' => '',
+			'default-repeat' => 'no-repeat',
 		] );
 
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * Adding this will allow you to select the featured image on posts and pages.
+		 *
+		 * @link
+		 */
+
 		add_theme_support( 'post-thumbnails' );
+
+		/*
+		 * Register image size
+		 *
+		 */
+
+		add_image_size( 'featured-large', 350, 233, true );
 
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
