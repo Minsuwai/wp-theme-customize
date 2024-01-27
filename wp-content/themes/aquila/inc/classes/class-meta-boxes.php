@@ -78,4 +78,14 @@ class Meta_Boxes {
 		</select>
 		<?php
 	}
+
+    public function save_post_meta_data( $post_id ) {
+	    if ( array_key_exists( 'aquila_hide_title_field', $_POST ) ) {
+		    update_post_meta(
+			    $post_id,
+			    '_hide_page_title',
+			    $_POST['aquila_hide_title_field']
+		    );
+	    }
+    }
 }

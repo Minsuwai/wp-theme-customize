@@ -5,7 +5,10 @@
  * @package Aquila
  */
 
+
 $the_post_id = get_the_ID();
+$hide_title = get_post_meta( $the_post_id, '_hide_page_title', true);
+
 $has_post_thumbnail = get_the_post_thumbnail( $the_post_id ); // Removed single quotes around $the_post_id
 ?>
 
@@ -29,6 +32,7 @@ $has_post_thumbnail = get_the_post_thumbnail( $the_post_id ); // Removed single 
 			</a>
 		</div>
 		<?php
+
 	}
 	?>
 </header>
