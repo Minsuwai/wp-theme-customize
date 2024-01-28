@@ -80,6 +80,26 @@ class Meta_Boxes {
 	}
 
     public function save_post_meta_data( $post_id ) {
+
+        /*
+         * When the post is saved or updated we get $_POST available
+         * Check if the current user is authorized
+         */
+
+        if ( ! current_user_can('edit_post', $post_id) ){
+            return;
+        }
+
+        /*
+         * Check if the nonce value we received is teh same we created.
+         */
+
+        if (! isset( $_POST['hide_title_meta_box_nonce_name'] ) ||
+            ! wp_verify_nonce(  $_POST['hide_title_meta_box_nonce_name'], plugin_basename(__FILE__) )
+        ){
+            return;
+        }
+
 	    if ( array_key_exists( 'aquila_hide_title_field', $_POST ) ) {
 		    update_post_meta(
 			    $post_id,
