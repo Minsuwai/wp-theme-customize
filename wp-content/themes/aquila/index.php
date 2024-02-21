@@ -82,6 +82,8 @@ get_header();
 
             endif;
 
+            aquila_pagination();
+
         ?>
     </main>
 </div>
