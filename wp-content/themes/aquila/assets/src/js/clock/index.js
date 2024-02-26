@@ -1,4 +1,3 @@
-
 ( function ( $ ) {
 	/**
 	 * Clock Class.
