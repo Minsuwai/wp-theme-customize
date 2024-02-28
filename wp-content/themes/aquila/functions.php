@@ -6,6 +6,7 @@
  * 
  * @package Aquila
  */
+define( 'AQUILA_BUILD_PATH', get_template_directory() . '/assets/build' );
 
 
  if ( ! defined( 'AQUILA_DIR_PATH' ) ) {
